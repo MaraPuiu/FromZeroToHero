@@ -47,6 +47,7 @@ namespace Basics
             //Console.WriteLine("Price with discount: " + price);
 
             double price = 100.00;
+            int price2 = 200;
             int age = 6;
             double newPrice3 = discountPrice(price);
             Console.WriteLine("Price with discount: " + newPrice3);
@@ -54,6 +55,8 @@ namespace Basics
             Console.WriteLine("Price with discount: " + newPrice);
             double newPrice2 = discountPrice(price, discType: DiscountType.BestDeal, age:age);
             Console.WriteLine("Price with discount: " + newPrice2);
+            double newPrice4 = discountPrice(price2, discType: DiscountType.BestDeal, age: age);
+            Console.WriteLine("Price with discount: " + newPrice4);
         }
 
         public static bool checkIfWeekend(DateTime date)
@@ -117,6 +120,18 @@ namespace Basics
         }
 
         public static double discountPrice(double price, int age = 14, DiscountType discType = DiscountType.General)
+        {
+            double newPrice;
+            int discount = 5;
+            if (age < 7) discount = 25;
+            else if (age <= 14) discount = 15;
+
+            newPrice = price * (100 - discount) / 100;
+            newPrice = newPrice * (100 - (int)discType) / 100;
+            return newPrice;
+        }
+
+        public static double discountPrice(int price, int age = 14, DiscountType discType = DiscountType.General)
         {
             double newPrice;
             int discount = 5;
