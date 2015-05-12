@@ -19,16 +19,20 @@ namespace Basics
             //Seasons season = Seasons.Winter;
             //customSeasonMessage(season);
 
-            string[] countries = new string[] { "Romatia", "Romania", "Anglia", "Franta" };
+            //string[] countries = new string[] { "Romatia", "Romania", "Anglia", "Franta" };
 
-            Console.WriteLine("Highest number of letters: " + highestNumberofLetters(countries));
+            //Console.WriteLine("Highest number of letters: " + highestNumberofLetters(countries));
 
-            int length;
-            string[] countriesHighest = highestNumberofLettersArray(countries, out length);
-            for (int i = 0; i < length; i++)
-            {
-                Console.WriteLine("Highest number: " + countriesHighest[i]);
-            }
+            //int length;
+            //string[] countriesHighest = highestNumberofLettersArray(countries, out length);
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.WriteLine("Highest number: " + countriesHighest[i]);
+            //}
+
+            Console.WriteLine("Highest number of letters: " + highestNumberofLetters("Romatia", "Romania", "Anglia"));
+            Console.WriteLine("Highest number of letters: " + highestNumberofLetters());
+            Console.WriteLine("Highest number of letters: " + highestNumberofLetters("Romania", "Anglia"));
         }
 
         public static bool checkIfWeekend(DateTime date)
@@ -57,8 +61,9 @@ namespace Basics
 
         }
 
-        public static string highestNumberofLetters(string[] countries)
+        public static string highestNumberofLetters(params string[] countries)
         {
+            if (countries.Length == 0) return "No countries";
             string longestWord = "";
 
             foreach (string country in countries)
