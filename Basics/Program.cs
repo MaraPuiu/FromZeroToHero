@@ -47,10 +47,12 @@ namespace Basics
             //Console.WriteLine("Price with discount: " + price);
 
             double price = 100.00;
-            int age = 14;
-            double newPrice = discountPrice(price, age, discType: DiscountType.BestDeal);
+            int age = 6;
+            double newPrice3 = discountPrice(price);
+            Console.WriteLine("Price with discount: " + newPrice3);
+            double newPrice = discountPrice(price, discType: DiscountType.BestDeal);
             Console.WriteLine("Price with discount: " + newPrice);
-            double newPrice2 = discountPrice(price, age);
+            double newPrice2 = discountPrice(price, discType: DiscountType.BestDeal, age:age);
             Console.WriteLine("Price with discount: " + newPrice2);
         }
 
@@ -114,7 +116,7 @@ namespace Basics
             return response;
         }
 
-        public static double discountPrice(double price, int age, DiscountType discType = DiscountType.General)
+        public static double discountPrice(double price, int age = 14, DiscountType discType = DiscountType.General)
         {
             double newPrice;
             int discount = 5;
