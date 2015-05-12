@@ -9,6 +9,7 @@ namespace Basics
     class Program
     {
         public enum Seasons { Winter = 0, Spring = 1, Summer = 2, Autumn = 3}
+        public enum DiscountType { General = 0, Promotion = 25, BestDeal = 50 }
 
         static void Main(string[] args)
         {
@@ -40,10 +41,17 @@ namespace Basics
             //discountPrice(price, age, out priceWithDiscount);
             //Console.WriteLine("Price with discount: " + priceWithDiscount);
 
+            //double price = 100.00;
+            //int age = 14;
+            //discountPrice(ref price, age);
+            //Console.WriteLine("Price with discount: " + price);
+
             double price = 100.00;
             int age = 14;
-            discountPrice(ref price, age);
-            Console.WriteLine("Price with discount: " + price);
+            double newPrice = discountPrice(price, age, discType: DiscountType.BestDeal);
+            Console.WriteLine("Price with discount: " + newPrice);
+            double newPrice2 = discountPrice(price, age);
+            Console.WriteLine("Price with discount: " + newPrice2);
         }
 
         public static bool checkIfWeekend(DateTime date)
@@ -106,13 +114,16 @@ namespace Basics
             return response;
         }
 
-        public static void discountPrice(ref double price, int age)
+        public static double discountPrice(double price, int age, DiscountType discType = DiscountType.General)
         {
+            double newPrice;
             int discount = 5;
             if (age < 7) discount = 25;
             else if (age <= 14) discount = 15;
 
-            price = price * (100 - discount) / 100;
+            newPrice = price * (100 - discount) / 100;
+            newPrice = newPrice * (100 - (int)discType) / 100;
+            return newPrice;
         }
     }
 }
