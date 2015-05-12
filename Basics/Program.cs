@@ -30,9 +30,15 @@ namespace Basics
             //    Console.WriteLine("Highest number: " + countriesHighest[i]);
             //}
 
-            Console.WriteLine("Highest number of letters: " + highestNumberofLetters("Romatia", "Romania", "Anglia"));
-            Console.WriteLine("Highest number of letters: " + highestNumberofLetters());
-            Console.WriteLine("Highest number of letters: " + highestNumberofLetters("Romania", "Anglia"));
+            //Console.WriteLine("Highest number of letters: " + highestNumberofLetters("Romatia", "Romania", "Anglia"));
+            //Console.WriteLine("Highest number of letters: " + highestNumberofLetters());
+            //Console.WriteLine("Highest number of letters: " + highestNumberofLetters("Romania", "Anglia"));
+       
+            double price = 100.00;
+            int age = 14;
+            double priceWithDiscount;
+            discountPrice(price, age, out priceWithDiscount);
+            Console.WriteLine("Price with discount: " + priceWithDiscount);
         }
 
         public static bool checkIfWeekend(DateTime date)
@@ -93,6 +99,15 @@ namespace Basics
 
             length = index;
             return response;
+        }
+
+        public static void discountPrice(double price, int age, out double priceWithDiscount)
+        {
+            int discount = 5;
+            if (age < 7) discount = 25;
+            else if (age <= 14) discount = 15;
+
+            priceWithDiscount = price * (100 - discount) / 100;
         }
     }
 }
