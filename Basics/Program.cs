@@ -34,11 +34,16 @@ namespace Basics
             //Console.WriteLine("Highest number of letters: " + highestNumberofLetters());
             //Console.WriteLine("Highest number of letters: " + highestNumberofLetters("Romania", "Anglia"));
        
+            //double price = 100.00;
+            //int age = 14;
+            //double priceWithDiscount;
+            //discountPrice(price, age, out priceWithDiscount);
+            //Console.WriteLine("Price with discount: " + priceWithDiscount);
+
             double price = 100.00;
             int age = 14;
-            double priceWithDiscount;
-            discountPrice(price, age, out priceWithDiscount);
-            Console.WriteLine("Price with discount: " + priceWithDiscount);
+            discountPrice(ref price, age);
+            Console.WriteLine("Price with discount: " + price);
         }
 
         public static bool checkIfWeekend(DateTime date)
@@ -101,13 +106,13 @@ namespace Basics
             return response;
         }
 
-        public static void discountPrice(double price, int age, out double priceWithDiscount)
+        public static void discountPrice(ref double price, int age)
         {
             int discount = 5;
             if (age < 7) discount = 25;
             else if (age <= 14) discount = 15;
 
-            priceWithDiscount = price * (100 - discount) / 100;
+            price = price * (100 - discount) / 100;
         }
     }
 }
