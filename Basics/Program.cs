@@ -16,8 +16,19 @@ namespace Basics
             //bool response = checkIfWeekend(t);
             //Console.WriteLine("Is weekend: " + response);
            
-            Seasons season = Seasons.Winter;
-            customSeasonMessage(season);
+            //Seasons season = Seasons.Winter;
+            //customSeasonMessage(season);
+
+            string[] countries = new string[] { "Romatia", "Romania", "Anglia", "Franta" };
+
+            Console.WriteLine("Highest number of letters: " + highestNumberofLetters(countries));
+
+            int length;
+            string[] countriesHighest = highestNumberofLettersArray(countries, out length);
+            for (int i = 0; i < length; i++)
+            {
+                Console.WriteLine("Highest number: " + countriesHighest[i]);
+            }
         }
 
         public static bool checkIfWeekend(DateTime date)
@@ -44,6 +55,39 @@ namespace Basics
                     break;
             }
 
+        }
+
+        public static string highestNumberofLetters(string[] countries)
+        {
+            string longestWord = "";
+
+            foreach (string country in countries)
+            {
+                if (longestWord.Length < country.Length) longestWord = country;
+            }
+
+            return longestWord;
+        }
+
+        public static string[] highestNumberofLettersArray(string[] countries, out int length)
+        {
+            int maxLength = 0;
+            string[] response = new string[countries.Length];
+            int index = 0;
+
+            foreach (string country in countries)
+            {
+                if (maxLength < country.Length) maxLength = country.Length;
+            }
+
+            foreach (string country in countries)
+            {
+                if (maxLength == country.Length)
+                    response[index++] = country;
+            }
+
+            length = index;
+            return response;
         }
     }
 }
