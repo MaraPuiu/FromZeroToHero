@@ -43,6 +43,14 @@ namespace OOPApplications
             return Hotel.distanceMeasurementUnit;
         }
 
+        public double GetDistance(string unit)
+        {
+            if (unit.Equals(distanceMeasurementUnit)) return distanceToCenter;
+            if (unit.Equals("KM")) return DistanceMeasurementConverter.milesToKM(distanceToCenter);
+            if (unit.Equals("Miles")) return DistanceMeasurementConverter.kmToMiles(distanceToCenter);
+            return 0;
+        }
+
         public void DisplayInfo()
         {
             Console.WriteLine("Name: " + name);
