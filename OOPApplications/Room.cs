@@ -16,6 +16,15 @@ namespace OOPApplications
         public int floor;
         public RoomTypes type;
 
+        public Room(string description, int places, int number, int floor, RoomTypes type)
+        {
+            this.description = description;
+            this.places = places;
+            this.number = number;
+            this.floor = floor;
+            this.type = type;
+        }
+
         public void DisplayInfo()
         {
             Console.WriteLine("Description: " + description);
@@ -23,6 +32,7 @@ namespace OOPApplications
             Console.WriteLine("Number: " + number);
             Console.WriteLine("Floor: " + floor);
             Console.WriteLine("Type: " + type);
+            Console.WriteLine();
         }
     }
 }

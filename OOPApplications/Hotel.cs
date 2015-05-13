@@ -16,6 +16,18 @@ namespace OOPApplications
         public DateTime openingDate;
         public Room[] rooms;
 
+        public Hotel(string name, string description, string address, int stars, double distanceToCenter,
+                DateTime openingDate, Room[] rooms)
+        {
+            this.name = name;
+            this.description = description;
+            this.address = address;
+            this.stars = stars;
+            this.distanceToCenter = distanceToCenter;
+            this.openingDate = openingDate;
+            this.rooms = rooms;
+        }
+
         public void DisplayInfo()
         {
             Console.WriteLine("Name: " + name);
@@ -25,10 +37,13 @@ namespace OOPApplications
             Console.WriteLine("Opening date: " + openingDate);
             Console.WriteLine("Number of rooms: " + rooms.Length);
 
+            Console.WriteLine();
+
             foreach (Room room in rooms)
             {
                 room.DisplayInfo();
             }
+            Console.WriteLine();
         }
     }
 }
