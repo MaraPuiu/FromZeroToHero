@@ -15,6 +15,11 @@ namespace OOPApplications
         public double distanceToCenter;
         public DateTime openingDate;
         public Room[] rooms;
+        public static string distanceMeasurementUnit;
+
+        static Hotel() {
+            distanceMeasurementUnit = "Miles";
+        }
 
         public Hotel(string name, string description, string address, int stars, double distanceToCenter,
                 DateTime openingDate, Room[] rooms)
@@ -34,6 +39,7 @@ namespace OOPApplications
             Console.WriteLine("Description: " + description);
             Console.WriteLine("Adress: " + address);
             Console.WriteLine("Stars: " + stars);
+            Console.WriteLine("Distance to center: " + distanceToCenter + distanceMeasurementUnit);
             Console.WriteLine("Opening date: " + openingDate);
             Console.WriteLine("Number of rooms: " + rooms.Length);
 
