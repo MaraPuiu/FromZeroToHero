@@ -15,5 +15,14 @@ namespace OOPApplications
         public int number;
         public int floor;
         public RoomTypes type;
+
+        public void DisplayInfo()
+        {
+            Console.WriteLine("Description: " + description);
+            Console.WriteLine("Places: " + places);
+            Console.WriteLine("Number: " + number);
+            Console.WriteLine("Floor: " + floor);
+            Console.WriteLine("Type: " + type);
+        }
     }
 }

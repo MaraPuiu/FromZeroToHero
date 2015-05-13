@@ -35,7 +35,12 @@ namespace OOPApplications
 
             hotel.rooms = new Room[] { room1, room2 };
 
-            Console.WriteLine("name: " + hotel.name + " adress: " + hotel.address + " opening year: " + hotel.openingDate.Year + " number of rooms: " + hotel.rooms.Length);
+            //Console.WriteLine("name: " + hotel.name +
+            //    " adress: " + hotel.address +
+            //    " opening year: " + hotel.openingDate.Year +
+            //    " number of rooms: " + hotel.rooms.Length);
+
+            hotel.DisplayInfo();
 
         }
     }

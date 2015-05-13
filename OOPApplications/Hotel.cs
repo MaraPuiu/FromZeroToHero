@@ -15,5 +15,20 @@ namespace OOPApplications
         public double distanceToCenter;
         public DateTime openingDate;
         public Room[] rooms;
+
+        public void DisplayInfo()
+        {
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Description: " + description);
+            Console.WriteLine("Adress: " + address);
+            Console.WriteLine("Stars: " + stars);
+            Console.WriteLine("Opening date: " + openingDate);
+            Console.WriteLine("Number of rooms: " + rooms.Length);
+
+            foreach (Room room in rooms)
+            {
+                room.DisplayInfo();
+            }
+        }
     }
 }
