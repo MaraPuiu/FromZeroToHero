@@ -15,7 +15,7 @@ namespace OOPApplications
         public double distanceToCenter;
         public DateTime openingDate;
         public Room[] rooms;
-        public static string distanceMeasurementUnit;
+        private static string distanceMeasurementUnit;
 
         static Hotel() {
             distanceMeasurementUnit = "Miles";
@@ -31,6 +31,16 @@ namespace OOPApplications
             this.distanceToCenter = distanceToCenter;
             this.openingDate = openingDate;
             this.rooms = rooms;
+        }
+
+        public static void SetDistanceMeasurementUnit(string distanceMeasurementUnit)
+        {
+            Hotel.distanceMeasurementUnit = distanceMeasurementUnit;
+        }
+
+        public static string GetDistanceMeasurementUnit()
+        {
+            return Hotel.distanceMeasurementUnit;
         }
 
         public void DisplayInfo()
