@@ -175,5 +175,10 @@ namespace OOPApplications
             }
             Console.WriteLine();
         }
+
+        public virtual double CalculateRating()
+        {
+            return 2 * Stars;
+        }
     }
 }

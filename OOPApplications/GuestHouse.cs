@@ -18,5 +18,9 @@ namespace OOPApplications
             ComfortIndex = comfortIndex;
         }
 
+        public override double CalculateRating()
+        {
+            return ComfortIndex * 0.6 + 2 * Stars * 0.4;
+        }
     }
 }

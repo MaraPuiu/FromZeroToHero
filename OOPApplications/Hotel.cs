@@ -23,5 +23,11 @@ namespace OOPApplications
             this.address = address;
         }
 
+        public override double CalculateRating()
+        {
+            double roundedLikes = Likes;
+            if (Likes > 10000) roundedLikes = 10000;
+            return roundedLikes/1000 * 0.3 + 2 * Stars * 0.7;
+        }
     }
 }
