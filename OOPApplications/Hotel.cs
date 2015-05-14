@@ -8,13 +8,13 @@ namespace OOPApplications
 {
     class Hotel
     {
-        public string name;
-        public string description;
-        public string address;
-        public int stars;
-        public double distanceToCenter;
-        public DateTime openingDate;
-        public Room[] rooms;
+        private string name;
+        private string description;
+        private string address;
+        private int stars;
+        private double distanceToCenter;
+        private DateTime openingDate;
+        private Room[] Rooms { get; set; }
         private static string distanceMeasurementUnit;
 
         static Hotel() {
@@ -24,13 +24,109 @@ namespace OOPApplications
         public Hotel(string name, string description, string address, int stars, double distanceToCenter,
                 DateTime openingDate, Room[] rooms)
         {
-            this.name = name;
-            this.description = description;
-            this.address = address;
-            this.stars = stars;
-            this.distanceToCenter = distanceToCenter;
-            this.openingDate = openingDate;
-            this.rooms = rooms;
+            Name = name;
+            Description = description;
+            Address = address;
+            Stars = stars;
+            DistanceToCenter = distanceToCenter;
+            OpeningDate = openingDate;
+            Rooms = rooms;
+        }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                if (value.Length < 50)
+                {
+                    name = value;
+                }
+                else name = "";
+            }
+        }
+
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                if (value.Length < 500)
+                {
+                    description = value;
+                }
+                else description = "";
+            }
+        }
+
+        public string Address
+        {
+            get
+            {
+                return address;
+            }
+            set
+            {
+                if (value.Length < 100)
+                {
+                    address = value;
+                }
+                else address = "";
+            }
+        }
+
+        public int Stars
+        {
+            get
+            {
+                return stars;
+            }
+            set
+            {
+                if (value >= 0 && value <= 5)
+                {
+                    stars = value;
+                }
+                else stars = 0;
+            }
+        }
+
+        public double DistanceToCenter
+        {
+            get
+            {
+                return distanceToCenter;
+            }
+            set
+            {
+                if (value >= 0 && value < 100)
+                {
+                    distanceToCenter = value;
+                }
+                else distanceToCenter = 0;
+            }
+        }
+
+        public DateTime OpeningDate
+        {
+            get
+            {
+                return openingDate;
+            }
+            set
+            {
+                if (DateTime.Compare(value, new DateTime(1800, 1, 1, 0, 0, 0)) > 0 && value < DateTime.Now)
+                {
+                    openingDate = value;
+                }
+                else openingDate = DateTime.Now;
+            }
         }
 
         public static void SetDistanceMeasurementUnit(string distanceMeasurementUnit)
@@ -45,25 +141,25 @@ namespace OOPApplications
 
         public double GetDistance(string unit)
         {
-            if (unit.Equals(distanceMeasurementUnit)) return distanceToCenter;
-            if (unit.Equals("KM")) return DistanceMeasurementConverter.milesToKM(distanceToCenter);
-            if (unit.Equals("Miles")) return DistanceMeasurementConverter.kmToMiles(distanceToCenter);
+            if (unit.Equals(distanceMeasurementUnit)) return DistanceToCenter;
+            if (unit.Equals("KM")) return DistanceMeasurementConverter.milesToKM(DistanceToCenter);
+            if (unit.Equals("Miles")) return DistanceMeasurementConverter.kmToMiles(DistanceToCenter);
             return 0;
         }
 
         public void DisplayInfo()
         {
-            Console.WriteLine("Name: " + name);
-            Console.WriteLine("Description: " + description);
-            Console.WriteLine("Adress: " + address);
-            Console.WriteLine("Stars: " + stars);
-            Console.WriteLine("Distance to center: " + distanceToCenter + distanceMeasurementUnit);
-            Console.WriteLine("Opening date: " + openingDate);
-            Console.WriteLine("Number of rooms: " + rooms.Length);
+            Console.WriteLine("Name: " + Name);
+            Console.WriteLine("Description: " + Description);
+            Console.WriteLine("Adress: " + Address);
+            Console.WriteLine("Stars: " + Stars);
+            Console.WriteLine("Distance to center: " + DistanceToCenter + distanceMeasurementUnit);
+            Console.WriteLine("Opening date: " + OpeningDate);
+            Console.WriteLine("Number of rooms: " + Rooms.Length);
 
             Console.WriteLine();
 
-            foreach (Room room in rooms)
+            foreach (Room room in Rooms)
             {
                 room.DisplayInfo();
             }
