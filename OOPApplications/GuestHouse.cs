@@ -18,7 +18,13 @@ namespace OOPApplications
             ComfortIndex = comfortIndex;
         }
 
-        public override double CalculateRating()
+        public override void DisplayInfo()
+        {
+            base.DisplayInfo();
+            Console.WriteLine("Comfort index: " + ComfortIndex);
+        }
+
+        public sealed override double CalculateRating()
         {
             return ComfortIndex * 0.6 + 2 * Stars * 0.4;
         }

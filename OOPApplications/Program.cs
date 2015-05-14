@@ -21,13 +21,14 @@ namespace OOPApplications
                 Address = "adress", DistanceToCenter = 23, Rooms = rooms, 
                 OpeningDate= DateTime.Now, Stars = 3};
 
-            //guestHouse.DisplayInfo();
-            //hotel.DisplayInfo();
+            guestHouse.DisplayInfo();
+            Console.WriteLine();
+            hotel.DisplayInfo();
             //hotel.ChangeAdress("new address");
             //hotel.DisplayInfo();
 
-            Console.WriteLine("Rating hotel: " + hotel.CalculateRating());
-            Console.WriteLine("Rating guestHouse: " + guestHouse.CalculateRating());
+            //Console.WriteLine("Rating hotel: " + hotel.CalculateRating());
+            //Console.WriteLine("Rating guestHouse: " + guestHouse.CalculateRating());
         }
     }
 }

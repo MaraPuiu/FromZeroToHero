@@ -157,7 +157,7 @@ namespace OOPApplications
         }
         #endregion
 
-        public void DisplayInfo()
+        public virtual void DisplayInfo()
         {
             Console.WriteLine("Name: " + Name);
             Console.WriteLine("Description: " + Description);
@@ -173,7 +173,6 @@ namespace OOPApplications
             {
                 room.DisplayInfo();
             }
-            Console.WriteLine();
         }
 
         public virtual double CalculateRating()

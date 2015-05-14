@@ -23,6 +23,12 @@ namespace OOPApplications
             this.address = address;
         }
 
+        public override void DisplayInfo()
+        {
+            base.DisplayInfo();
+            Console.WriteLine("Number of likes: " + Likes);
+        }
+
         public override double CalculateRating()
         {
             double roundedLikes = Likes;
