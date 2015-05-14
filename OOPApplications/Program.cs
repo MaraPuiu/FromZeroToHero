@@ -14,25 +14,16 @@ namespace OOPApplications
             Room room2 = new Room("Room2Desc", 2, 2, 3, RoomTypes.Double);
             Room[] rooms = new Room[] { room1, room2 };
 
-            //Hotel hotel = new Hotel("HotelName", "HotelDesc", "HotelAddress", 5, 10.2, DateTime.Now, rooms);
-            // Hotel hotel2 = new Hotel("HotelName2", "HotelDesc2", "HotelAddress2", 5, 10, DateTime.Now, rooms);
+            Hotel hotel = new Hotel("HotelName", "HotelDesc", "HotelAddress", 5, 10.2, DateTime.Now, rooms, 2300);
+            GuestHouse guestHouse = new GuestHouse("GH2", "gh2", "HotelAddress2", 5, 10, DateTime.Now, rooms, 7);
 
-            Property hotel2 = new Property() { Name = "Room12Desc", Description = "Room122Desc", 
+            Property property = new Property() { Name = "Room12Desc", Description = "Room122Desc", 
                 Address = "adress", DistanceToCenter = 23, Rooms = rooms, 
                 OpeningDate= DateTime.Now, Stars = 3};
 
-            //Hotel.SetDistanceMeasurementUnit("KM");
-            //Console.WriteLine(hotel.GetDistance("Miles"));
-
-            //Hotel.SetDistanceMeasurementUnit("Miles");
-            //Console.WriteLine(hotel.GetDistance("Miles"));
-            //Console.WriteLine(hotel.GetDistance("KM"));
-            //Console.WriteLine("Distance measurement unit: " + Hotel.GetDistanceMeasurementUnit() + "\n");
-
-            hotel2.DisplayInfo();
-           // hotel.DisplayInfo();
-            //hotel2.DisplayInfo();
-            
+            guestHouse.DisplayInfo();
+            hotel.DisplayInfo();
+        
         }
     }
 }
