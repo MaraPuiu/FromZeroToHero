@@ -10,7 +10,7 @@ namespace OOPApplications
     {
         private string name;
         private string description;
-        private string address;
+        protected string address;
         private int stars;
         private double distanceToCenter;
         private DateTime openingDate;

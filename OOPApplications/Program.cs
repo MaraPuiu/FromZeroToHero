@@ -21,7 +21,11 @@ namespace OOPApplications
                 Address = "adress", DistanceToCenter = 23, Rooms = rooms, 
                 OpeningDate= DateTime.Now, Stars = 3};
 
-            guestHouse.DisplayInfo();
+            //guestHouse.DisplayInfo();
+            hotel.DisplayInfo();
+
+            hotel.ChangeAdress("new address");
+
             hotel.DisplayInfo();
         
         }

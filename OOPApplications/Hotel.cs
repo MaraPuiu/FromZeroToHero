@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPApplications
 {
-    class Hotel : Property
+    sealed class Hotel : Property
     {
         public int Likes { get; set; }
 
@@ -16,6 +16,11 @@ namespace OOPApplications
                 openingDate, rooms)
         {
             Likes = likes;
+        }
+
+        public void ChangeAdress(string address)
+        {
+            this.address = address;
         }
 
     }
