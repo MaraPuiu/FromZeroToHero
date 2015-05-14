@@ -16,8 +16,11 @@ namespace OOPApplications
         private DateTime openingDate;
         private Room[] Rooms { get; set; }
         private static string distanceMeasurementUnit;
+        public bool HasWiFi { get; set; }
+        public bool HasIndoorPool { get; set; }
 
-        static Hotel() {
+        static Hotel()
+        {
             distanceMeasurementUnit = "Miles";
         }
 
@@ -33,6 +36,7 @@ namespace OOPApplications
             Rooms = rooms;
         }
 
+        #region fields
         public string Name
         {
             get
@@ -146,6 +150,7 @@ namespace OOPApplications
             if (unit.Equals("Miles")) return DistanceMeasurementConverter.kmToMiles(DistanceToCenter);
             return 0;
         }
+        #endregion
 
         public void DisplayInfo()
         {

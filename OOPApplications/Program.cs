@@ -11,7 +11,7 @@ namespace OOPApplications
         static void Main(string[] args)
         {
             Room room1 = new Room("Room1Desc", 1, 2, 3, RoomTypes.Single);
-            Room room2 = new Room("Room2Desc", 1, 2, 3, RoomTypes.Double);
+            Room room2 = new Room("Room2Desc", 2, 2, 3, RoomTypes.Double);
             Room[] rooms = new Room[] { room1, room2 };
 
             Hotel hotel = new Hotel("HotelName", "HotelDesc", "HotelAddress", 5, 10.2, DateTime.Now, rooms);
@@ -26,7 +26,7 @@ namespace OOPApplications
             //Console.WriteLine("Distance measurement unit: " + Hotel.GetDistanceMeasurementUnit() + "\n");
 
             hotel.DisplayInfo();
-            hotel2.DisplayInfo();
+            //hotel2.DisplayInfo();
             
         }
     }

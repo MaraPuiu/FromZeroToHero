@@ -15,16 +15,19 @@ namespace OOPApplications
         private int number;
         private int floor;
         private RoomTypes Type { get; set; }
+        public bool HasAirConditioning { get; set; }
+        public bool HasFlatTvScreen { get; set; }
 
         public Room(string description, int places, int number, int floor, RoomTypes type)
         {
+            Type = type;
             Description = description;
             Places = places;
             Number = number;
             Floor = floor;
-            Type = type;
         }
 
+        #region fields
         public string Description
         {
             get
@@ -65,7 +68,24 @@ namespace OOPApplications
             }
             set
             {
-                if (value >= 0 && value <= 1 && Type == RoomTypes.Single)
+                //Console.WriteLine(value);
+                if ((value == 1) && (Type == RoomTypes.Single))
+                {
+                    places = value;
+                }
+                else if ((Type == RoomTypes.Double) && (value <= 2))
+                {
+                    places = value;
+                }
+                else if ((Type == RoomTypes.Twin) && (value <= 2))
+                {
+                    places = value;
+                }
+                else if ((Type == RoomTypes.Duplex) && (value <= 4))
+                {
+                    places = value;
+                }
+                else if ((Type == RoomTypes.KingBedroom) && (value <= 6))
                 {
                     places = value;
                 }
@@ -88,12 +108,12 @@ namespace OOPApplications
                 else floor = 0;
             }
         }
-
+        #endregion
 
         public void DisplayInfo()
         {
             Console.WriteLine("Description: " + Description);
-            Console.WriteLine("Places: " + places);
+            Console.WriteLine("Places: " + Places);
             Console.WriteLine("Number: " + Number);
             Console.WriteLine("Floor: " + Floor);
             Console.WriteLine("Type: " + Type);
