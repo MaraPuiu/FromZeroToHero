@@ -14,7 +14,7 @@ namespace OOPApplications
         private int stars;
         private double distanceToCenter;
         private DateTime openingDate;
-        private Room[] Rooms { get; set; }
+        public Room[] Rooms { get; set; }
         private static string distanceMeasurementUnit;
         public bool HasWiFi { get; set; }
         public bool HasIndoorPool { get; set; }
@@ -22,6 +22,11 @@ namespace OOPApplications
         static Hotel()
         {
             distanceMeasurementUnit = "Miles";
+        }
+
+        public Hotel()
+        {
+
         }
 
         public Hotel(string name, string description, string address, int stars, double distanceToCenter,
