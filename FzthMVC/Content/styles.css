@@ -1,0 +1,31 @@
+nav{
+  background-color: #626262;
+ 
+}
+
+article{
+    background-color: #DDDDDD;
+}
+
+footer{
+   background-color: rgb(98, 98, 93);
+  font-size: 18px;
+  color: antiquewhite;
+}
+
+td img{
+  width:15px;
+}
+
+ section{
+  margin-top:20px;
+  margin-bottom: 20px;
+ }
+
+ .green{
+     background-color:green;
+ }
+
+ .red{
+     background-color:red;
+ }

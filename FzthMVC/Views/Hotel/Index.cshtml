@@ -1,0 +1,33 @@
+﻿@using FZTH.MVC.DataAccess;
+@{
+    ViewBag.Title = "Home Page";
+}
+<article class="col-md-9">
+    <section id="hotelList" class="col-md-10 col-md-offset-1">
+        <table border=1 class="table table-striped table-hover">
+            <tr class="info">
+                <th>ID</th>
+                <th>Nume</th>
+                <th>Descriere</th>
+                <th>Tara</th>
+                <th>Oras</th>
+                <th>Rating</th>
+            </tr>
+            @for(int i = 0; i < Data.Hotels.Count; i++)
+            {
+                <tr @(i%2 == 0 ? "class=green" : "class=red" )>
+                    <td>@Data.Hotels[i].Id</td>
+                    <td>@Data.Hotels[i].Name</td>
+                    <td>@Data.Hotels[i].Description</td>
+                    <td>@Data.Hotels[i].Country</td>
+                    <td>@Data.Hotels[i].City</td>
+                    <td>
+                        @for (int j = 0; j < Data.Hotels[i].Rating; j++) { 
+                            <img src="~/Content/Images/star.jpg" alt="Smiley face" height="10">}
+                    </td>
+                </tr>
+            }
+        </table>
+    </section>
+</article>
+

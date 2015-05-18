@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Booking app</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/styles.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="row">
+        <header class="col-md-12">
+            <h1 class="col-md-offset-2">Booking</h1>
+        </header>
+    </div>
+    <div class="row">
+        @{Html.RenderPartial("_NavSection");}
+        
+    </div>
+    <div class="row">
+        <aside class="col-md-3">
+            <ul class="asideMenu">
+                <h3>Page navigation</h3>
+                <li><a href="#reservation">Reservation Form</a></li>
+                <li><a href="#hotelList">Hotel List</a></li>
+                <li><a href="#lastMinute">Last minute deals</a></li>
+            </ul>
+        </aside>
+        <article class="col-md-9">
+        @RenderBody();
+        </article>
+    </div>
+    <footer class="col-md-12">
+        <p class="text-center">From Zero to Hero - Teamnet Iasi </p>
+    </footer>
+</body>
+</html>
