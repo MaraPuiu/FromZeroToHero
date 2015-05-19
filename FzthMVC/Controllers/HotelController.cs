@@ -55,10 +55,9 @@ namespace FzthMVC.Controllers
                 idHotel++;
                 hotel.Id = idHotel;
                 Data.Add(hotel);
+                return RedirectToAction("Index");
             }
-            else return View();
-
-            return RedirectToAction("Index"); 
+            else return View(hotel);
         }
 
         [HttpPost]
@@ -80,10 +79,10 @@ namespace FzthMVC.Controllers
                 hotelChanged.Rating = hotel.Rating;
                 hotelChanged.City = hotel.City;
                 hotelChanged.Country = hotel.Country;
-            }
-            else return View();
 
-            return RedirectToAction("Index"); 
+                return RedirectToAction("Index"); 
+            }
+            else return View(hotel);
         }
 	}
 }
