@@ -18,10 +18,10 @@
                     @Html.DisplayNameFor(model => model.Description)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Country)
+                    @Html.DisplayNameFor(model => model.HotelCity.CityName)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.City)
+                    @Html.DisplayNameFor(model => model.HotelCity.CityCounty.CountyName)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Rating)
@@ -39,10 +39,10 @@
                         @Html.DisplayFor(modelItem => item.Description)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Country)
+                        @Html.DisplayFor(modelItem => item.HotelCity.CityName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.City)
+                        @Html.DisplayFor(modelItem => item.HotelCity.CityCounty.CountyName)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Rating)

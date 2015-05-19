@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using FzthMVC.DataAccess;
 
 namespace FZTH.MVC.DataAccess
 {
@@ -18,13 +19,15 @@ namespace FZTH.MVC.DataAccess
         [StringLength(30)]
         public String Description { get; set; }
 
-        [Required]
-        [StringLength(20)]
-        public String Country { get; set; }
+        public City HotelCity { get; set; }
 
-        [Required]
-        [StringLength(20)]
-        public String City { get; set; }
+        //[Required]
+        //[StringLength(20)]
+        //public String County { get; set; }
+
+        //[Required]
+        //[StringLength(20)]
+        //public String City { get; set; }
 
         [Required]
         [Range(1, 10)]

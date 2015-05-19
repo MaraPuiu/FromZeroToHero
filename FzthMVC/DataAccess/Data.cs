@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using FzthMVC.DataAccess;
 
 namespace FZTH.MVC.DataAccess
 {
@@ -15,8 +16,8 @@ namespace FZTH.MVC.DataAccess
                         Name = "Hotel International",
                         Description = "DFescriere hotel International",
                         Rating = 4,
-                        City = "Iasi",
-                        Country = "Iasi"
+                        HotelCity = 
+                            new City{ CityName = "Iasi", CityCounty = new County{ CountyName = "Iasi"}}
                     },
                     new Hotel
                     {
@@ -24,8 +25,8 @@ namespace FZTH.MVC.DataAccess
                         Name = "Hotel Unique",
                         Description = "Un hotel unic in Bucuresti",
                         Rating = 4,
-                        City = "Bucuresti",
-                        Country = "Bucuresti"
+                        HotelCity = 
+                            new City{ CityName = "Bucuresti", CityCounty = new County{ CountyName = "Bucuresti"}}
                     },
                     new Hotel
                     {
@@ -33,8 +34,8 @@ namespace FZTH.MVC.DataAccess
                         Name = "Hotel Mariko Inn",
                         Description = "Descriere a la Mariko",
                         Rating = 3,
-                        City = "Roman",
-                        Country = "Neamt"
+                        HotelCity = 
+                            new City{ CityName = "Roman", CityCounty = new County{ CountyName = "Neamt"}}
                     }
                 };
 

@@ -118,6 +118,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
+    <Compile Include="DataAccess\City.cs" />
+    <Compile Include="DataAccess\County.cs" />
     <Compile Include="DataAccess\Data.cs" />
     <Compile Include="DataAccess\Hotel.cs" />
     <Compile Include="Global.asax.cs">
