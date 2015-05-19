@@ -7,11 +7,7 @@ namespace FZTH.MVC.DataAccess
 {
     public static class Data
     {
-        public static List<Hotel> Hotels
-        {
-            get
-            {
-                return new List<Hotel>()
+        private static List<Hotel> hotels = new List<Hotel>()
                 {
                     new Hotel
                     {
@@ -41,7 +37,39 @@ namespace FZTH.MVC.DataAccess
                         Country = "Neamt"
                     }
                 };
+
+        public static List<Hotel> Hotels
+        {
+            get
+            {
+                return hotels;
             }
+        }
+
+        public static void Remove(int id)
+        {
+            var firstMatch = Hotels.First(s => s.Id == id);
+            Hotels.Remove(firstMatch);
+        }
+
+        public static void Add(Hotel hotel)
+        {
+            Hotels.Add(hotel);
+        }
+
+        public static int MaxId()
+        {
+            int max = 0;
+            foreach (Hotel hotel in Hotels)
+                if (max < hotel.Id) max = hotel.Id; 
+            return max;
+        }
+
+        public static Hotel FindHotel(int id)
+        {
+            foreach (Hotel hotel in Hotels)
+                if (id == hotel.Id) return hotel;
+            return null;
         }
     }
 }
