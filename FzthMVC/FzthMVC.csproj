@@ -118,6 +118,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
+    <Compile Include="Controllers\HotelJSController.cs" />
     <Compile Include="DataAccess\City.cs" />
     <Compile Include="DataAccess\County.cs" />
     <Compile Include="DataAccess\Data.cs" />
@@ -139,6 +140,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\generator.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -165,6 +167,7 @@
     <Content Include="Views\Hotel\Create.cshtml" />
     <Content Include="Views\Hotel\Delete.cshtml" />
     <Content Include="Views\Hotel\Edit.cshtml" />
+    <Content Include="Views\HotelJS\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OOPApplications\OOPApplications.csproj">

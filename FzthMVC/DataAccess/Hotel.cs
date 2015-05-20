@@ -21,14 +21,6 @@ namespace FZTH.MVC.DataAccess
 
         public City HotelCity { get; set; }
 
-        //[Required]
-        //[StringLength(20)]
-        //public String County { get; set; }
-
-        //[Required]
-        //[StringLength(20)]
-        //public String City { get; set; }
-
         [Required]
         [Range(1, 10)]
         public Int32 Rating { get; set; }

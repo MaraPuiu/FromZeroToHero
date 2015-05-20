@@ -45,6 +45,10 @@ namespace FZTH.MVC.DataAccess
             {
                 return hotels;
             }
+            set 
+            {
+                hotels = value;
+            }
         }
 
         public static void Remove(int id)
