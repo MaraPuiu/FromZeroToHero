@@ -16,8 +16,8 @@ namespace FZTH.MVC.DataAccess
                         Name = "Hotel International",
                         Description = "DFescriere hotel International",
                         Rating = 4,
-                        HotelCity = 
-                            new City{ CityName = "Iasi", CityCounty = new County{ CountyName = "Iasi"}}
+                        City = 
+                            new City{ Name = "Iasi", County = new County{ Name = "Iasi"}}
                     },
                     new Hotel
                     {
@@ -25,8 +25,8 @@ namespace FZTH.MVC.DataAccess
                         Name = "Hotel Unique",
                         Description = "Un hotel unic in Bucuresti",
                         Rating = 4,
-                        HotelCity = 
-                            new City{ CityName = "Bucuresti", CityCounty = new County{ CountyName = "Bucuresti"}}
+                        City = 
+                            new City{ Name = "Bucuresti", County = new County{ Name = "Bucuresti"}}
                     },
                     new Hotel
                     {
@@ -34,8 +34,8 @@ namespace FZTH.MVC.DataAccess
                         Name = "Hotel Mariko Inn",
                         Description = "Descriere a la Mariko",
                         Rating = 3,
-                        HotelCity = 
-                            new City{ CityName = "Roman", CityCounty = new County{ CountyName = "Neamt"}}
+                        City = 
+                            new City{ Name = "Roman", County = new County{ Name = "Neamt"}}
                     }
                 };
 

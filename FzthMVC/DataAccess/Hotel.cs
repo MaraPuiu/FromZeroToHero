@@ -19,7 +19,7 @@ namespace FZTH.MVC.DataAccess
         [StringLength(30)]
         public String Description { get; set; }
 
-        public City HotelCity { get; set; }
+        public City City { get; set; }
 
         [Required]
         [Range(1, 10)]

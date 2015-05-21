@@ -12,13 +12,13 @@ namespace FzthMVC.DataAccess
 
         public County()
         {
-            CountyId = maxId;
+            Id = maxId;
             maxId++;
         }
 
-        public int CountyId { get; set; }
+        public int Id { get; set; }
 
         [Display(Name = "County")]
-        public string CountyName { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -10,7 +10,7 @@
             var hotels = [];
 
             $.each(result, function (i, item) {
-                var hotel = new Hotel({ id: item.Id, name: item.Name, description: item.Description, country: item.HotelCity.CityCounty.CountyName, city: item.HotelCity.CityName, rating: item.Rating });
+                var hotel = new Hotel({ id: item.Id, name: item.Name, description: item.Description, country: item.City.County.Name, city: item.City.Name, rating: item.Rating });
                 hotels.push(hotel);
             });
 
@@ -246,8 +246,6 @@ function generateTable(container, initialHotels) {
             var userHasConfirmedAction = confirm('Are you sure you want to delete the selected hotel (' + hotelToRemove.name + ')?');
             if (userHasConfirmedAction === true) {
                 checkIfDeleted(hotelToRemove.id);
-                //removeHotel(hotelToRemove.id);
-                //refresh();
             }
         }
     }
@@ -272,15 +270,12 @@ function generateTable(container, initialHotels) {
     function onOperationConfirm(sender) {
         console.log('onOperationConfirm');
 
-
         var row = $(sender).closest('tr');
         var hotelFromRow = mapRowToHotel(row);
 
         var mustAddHotel = row.hasClass(constants.ROW_ADD_MODE_CLASS);
         if (mustAddHotel) {
             checkIfCreated(hotelFromRow);
-
-
         } else {
             checkIfUpdated(hotelFromRow);
         }
@@ -289,19 +284,33 @@ function generateTable(container, initialHotels) {
     }
 
     function checkIfCreated(hotelObj) {
+        var hotelObject = {
+            hotel: {
+                Id: hotelObj.id,
+                Name: hotelObj.name,
+                Description: hotelObj.description,
+                City: {
+                    Name: hotelObj.city,
+                    County: {
+                        Name: hotelObj.country
+                    }
+                },
+                Rating: hotelObj.rating
+            }
+        }
+
         return $.ajax({
             url: ('/HotelJS/CheckCreate'),
             type: 'POST',
             cache: false,
-            data: {
-                name: hotelObj.name,
-                description: hotelObj.description,
-                city: hotelObj.city,
-                county: hotelObj.country,
-                rating: hotelObj.rating
-            },
+            data: JSON.stringify(hotelObject),
+            dataType: "json",
+            contentType: "application/json",
             statusCode: {
                 200: function () {
+                    var maxHotelId = getMaxHotelId();
+                    var newHotelId = maxHotelId + 1;
+                    hotelObj.id = newHotelId;
                     addHotel(hotelObj);
                     refresh();
                 }
@@ -310,18 +319,27 @@ function generateTable(container, initialHotels) {
     }
 
     function checkIfUpdated(hotelObj) {
+        var hotelObject = {
+            hotel: {
+                Id: hotelObj.id,
+                Name: hotelObj.name,
+                Description: hotelObj.description,
+                City: {
+                    Name: hotelObj.city,
+                    County: {
+                        Name: hotelObj.country
+                    }
+                },
+                Rating: hotelObj.rating
+            }
+        }
+
         return $.ajax({
             url: ('/HotelJS/CheckUpdate'),
             type: 'POST',
-            cache: false,
-            data: {
-                id: hotelObj.id,
-                name: hotelObj.name,
-                description: hotelObj.description,
-                city: hotelObj.city,
-                county: hotelObj.country,
-                rating: hotelObj.rating
-            },
+            data: JSON.stringify(hotelObject),
+            dataType: "json",
+            contentType: "application/json",
             statusCode: {
                 200: function () {
                     updateHotel(hotelObj);

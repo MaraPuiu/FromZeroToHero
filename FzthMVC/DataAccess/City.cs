@@ -12,22 +12,22 @@ namespace FzthMVC.DataAccess
 
         public City()
         {
-            CityId = maxId;
+            Id = maxId;
             maxId++;
         }
 
-        public int CityId { get; set; }
+        public int Id { get; set; }
 
         [Display(Name = "City")]
-        public string CityName { get; set; }
+        public string Name { get; set; }
 
-        private County cityCounty;
-        public County CityCounty { 
+        private County county;
+        public County County { 
             get{
-                return cityCounty;
+                return county;
             }
             set{
-                cityCounty = value;
+                county = value;
             }
         }
     }

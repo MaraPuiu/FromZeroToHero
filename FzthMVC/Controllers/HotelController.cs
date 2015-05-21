@@ -77,8 +77,8 @@ namespace FzthMVC.Controllers
                 hotelChanged.Name = hotel.Name;
                 hotelChanged.Description = hotel.Description;
                 hotelChanged.Rating = hotel.Rating;
-                hotelChanged.HotelCity.CityName = hotel.HotelCity.CityName;
-                hotelChanged.HotelCity.CityCounty.CountyName = hotel.HotelCity.CityCounty.CountyName;
+                hotelChanged.City.Name = hotel.City.Name;
+                hotelChanged.City.County.Name = hotel.City.County.Name;
 
                 return RedirectToAction("Index"); 
             }

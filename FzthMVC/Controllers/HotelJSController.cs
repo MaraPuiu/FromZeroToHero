@@ -33,44 +33,43 @@ namespace FzthMVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult CheckCreate(string name, string description, string city, string county, int rating)
+        public ActionResult CheckCreate(Hotel hotel)
         {
-            Hotel hotel = new Hotel();
+            //Hotel hotel = new Hotel();
             if (ModelState.IsValid)
             {
                 int idHotel = Data.MaxId();
                 idHotel++;
                 hotel = new Hotel
-                    {
-                        Id = idHotel,
-                        Name = name,
-                        Description = description,
-                        Rating = rating,
-                        HotelCity =
-                            new City { CityName = city, CityCounty = new County { CountyName = county } }
-                    };
+                {
+                    Id = idHotel,
+                    Name = hotel.Name,
+                    Description = hotel.Description,
+                    Rating = hotel.Rating,
+                    City =
+                        new City { Name = hotel.City.Name, County = new County { Name = hotel.City.County.Name } }
+                };
                 Data.Add(hotel);
                 return new HttpStatusCodeResult(HttpStatusCode.OK);
             }
-            else return View(hotel);
+            else return View("Error");
         }
 
         [HttpPost]
-        public ActionResult CheckUpdate(int id, string name, string description, string city, string county, int rating)
+        public ActionResult CheckUpdate(Hotel hotel)
         {
-            Hotel hotel = new Hotel();
             if (ModelState.IsValid)
             {
-                var hotelChanged = Data.FindHotel(id);
-                hotelChanged.Name = name;
-                hotelChanged.Description = description;
-                hotelChanged.Rating = rating;
-                hotelChanged.HotelCity.CityName = city;
-                hotelChanged.HotelCity.CityCounty.CountyName = county;
+                var hotelChanged = Data.FindHotel(hotel.Id);
+                hotelChanged.Name = hotel.Name;
+                hotelChanged.Description = hotel.Description;
+                hotelChanged.Rating = hotel.Rating;
+                hotelChanged.City.Name = hotel.City.Name;
+                hotelChanged.City.County.Name = hotel.City.County.Name;
 
                 return new HttpStatusCodeResult(HttpStatusCode.OK);
             }
-            else return View(hotel);
+            else return View("Error");
         }
     }
 }
