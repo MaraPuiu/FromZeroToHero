@@ -35,7 +35,6 @@ namespace FzthMVC.Controllers
         [HttpPost]
         public ActionResult CheckCreate(Hotel hotel)
         {
-            //Hotel hotel = new Hotel();
             if (ModelState.IsValid)
             {
                 int idHotel = Data.MaxId();

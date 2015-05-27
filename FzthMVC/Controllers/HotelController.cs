@@ -14,7 +14,10 @@ namespace FzthMVC.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View(Data.Hotels);
+            DataHelper dh = new DataHelper(NHibernateHelper.OpenSession());
+            var hotelEntities = dh.GetHotels().ToList();
+            var hotels = Converter.FromEntityToModel(hotelEntities);
+            return View(hotels);
         }
 
         public ActionResult Detail(Int32 id)

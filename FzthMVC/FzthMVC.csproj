@@ -39,7 +39,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\packages\FluentNHibernate.2.0.1.0\lib\net40\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.4.0.3.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -119,13 +128,20 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\HotelJSController.cs" />
+    <Compile Include="Converter.cs" />
     <Compile Include="DataAccess\City.cs" />
     <Compile Include="DataAccess\County.cs" />
     <Compile Include="DataAccess\Data.cs" />
     <Compile Include="DataAccess\Hotel.cs" />
+    <Compile Include="NHibernateHelper.cs" />
+    <Compile Include="DataHelper.cs" />
+    <Compile Include="Entities\Hotel.cs" />
+    <Compile Include="Entities\Location.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="MapEntities\HotelMap.cs" />
+    <Compile Include="MapEntities\LocationMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
