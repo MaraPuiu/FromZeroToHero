@@ -16,6 +16,7 @@ namespace FzthMVC.MapEntities
             Id(x => x.Id);
             Map(x => x.City);
             Map(x => x.County);
+            HasMany(x => x.Hotels).KeyColumn("LocationId");
         }
     }
 }

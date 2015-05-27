@@ -13,7 +13,7 @@ namespace FzthMVC.DataAccess
         public City()
         {
             Id = maxId;
-            maxId++;
+            //maxId++;
         }
 
         public int Id { get; set; }

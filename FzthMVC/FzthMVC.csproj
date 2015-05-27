@@ -184,6 +184,7 @@
     <Content Include="Views\Hotel\Delete.cshtml" />
     <Content Include="Views\Hotel\Edit.cshtml" />
     <Content Include="Views\HotelJS\Index.cshtml" />
+    <Content Include="Views\Hotel\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OOPApplications\OOPApplications.csproj">

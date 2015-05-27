@@ -70,9 +70,9 @@ namespace FZTH.MVC.DataAccess
             return max;
         }
 
-        public static Hotel FindHotel(int id)
+        public static Hotel FindHotel(int id, List<Hotel> hotels)
         {
-            foreach (Hotel hotel in Hotels)
+            foreach (Hotel hotel in hotels)
                 if (id == hotel.Id) return hotel;
             return null;
         }

@@ -59,7 +59,7 @@ namespace FzthMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var hotelChanged = Data.FindHotel(hotel.Id);
+                var hotelChanged = Data.FindHotel(hotel.Id, Data.Hotels);
                 hotelChanged.Name = hotel.Name;
                 hotelChanged.Description = hotel.Description;
                 hotelChanged.Rating = hotel.Rating;
